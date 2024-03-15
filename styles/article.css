@@ -1,0 +1,32 @@
+@import "style.css";
+
+#article-panel {
+    display: flex;
+    flex-flow: column;
+    width: 600px;
+    padding-left: .5em;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.article-header {
+    margin-top: 0;
+    padding-top: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.article-header p {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.article-label {
+    margin-top: .5em;
+}
+
+.article-body {
+    flex: 1;
+}
