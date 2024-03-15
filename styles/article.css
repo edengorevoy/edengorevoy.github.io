@@ -4,13 +4,13 @@
     display: flex;
     flex-flow: column;
     width: 600px;
-    padding-left: .5em;
+    padding: .5em;
     justify-content: flex-start;
     align-items: flex-start;
 }
 
 .article-header {
-    margin-top: 0;
+    margin-top: .5em;
     padding-top: 0;
     display: flex;
     flex-flow: column;
@@ -23,10 +23,28 @@
     padding-top: 0;
 }
 
-.article-label {
-    margin-top: .5em;
+.article-body {
+    display: block;
+    direction: ltr;
 }
 
-.article-body {
-    flex: 1;
+.article-body p {
+    position: relative;
+}
+
+.article-body .infobox {
+    float: right;
+    width: 200px;
+    margin: 0.5em 0 0.5em 1em;
+    padding: 0.2em;
+    border: 1px solid #a2a9b1;
+    border-spacing: 3px;
+    background-color: #f8f9fa;
+    clear: right;
+}
+
+.article-body .infobox img {
+    float: right;
+    width: 200px;
+    height: 200px;
 }

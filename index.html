@@ -9,25 +9,17 @@
     <link href="./styles/style.css" rel="stylesheet" type="text/css" />
 </head>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        console.warn("hello");
+        $("#header").load("header.html");
+    });
+</script>
+
 <body>
     <div id="page">
-        <div id="header">
-            <div id="header-left">
-                <h1>CatFeed</h1>
-                <h2>all you need to know</h2>
-            </div>
-            <div id="header-right">
-                <ul id="sign-in">
-                    <li>sign in</li>
-                    <li>sign up</li>
-                </ul>
-                <ul class="top-nav">
-                    <li class="home"><a href="/web/20080827185942/http://www.buzzfeed.com/">home</a></li>
-                    <li class="quizzes"><a href="/web/20080827185942/http://www.buzzfeed.com/top/buzz">quizzes</a></li>
-                    <li class="forum"><a href="/web/20080827185942/http://www.buzzfeed.com/archive">forum</a></li>
-                </ul>
-            </div>
-        </div>
+        <div id="header"></div>
         <div id="content">
             <div id="side-nav">
                 <h2 id="categories">categories</h2>
