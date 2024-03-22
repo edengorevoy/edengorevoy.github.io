@@ -1,5 +1,3 @@
-@import "style.css";
-
 #article-panel {
     display: flex;
     flex-flow: column;

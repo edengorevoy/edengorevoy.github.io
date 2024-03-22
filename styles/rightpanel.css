@@ -1,0 +1,14 @@
+.num-whiskers {
+    font-weight: bold;
+    color: #6c2a16
+}
+
+.user-byline {
+    text-decoration: underline;
+    color: #DE542A;
+}
+
+#right-panel p {
+    margin-bottom: .2em;
+    margin-top: .2em;
+}

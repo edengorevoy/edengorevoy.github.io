@@ -4,7 +4,7 @@
 <title>CatFeed</title>
 
 <head>
-    <link href="styles/article.css" rel="stylesheet" type="text/css" />
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 
@@ -13,6 +13,8 @@
     $(document).ready(function () {
         console.warn("hello");
         $("#header").load("header.html");
+        $("#side-nav").load("sidenav.html");
+        $("#right-panel").load("rightpanel.html");
     });
 </script>
 
@@ -22,18 +24,7 @@
         </div>
         <div id="content">
             <div id="side-nav">
-                <h2 id="categories">categories</h2>
-                <ul>
-                    <li id="cat-all">All</li>
-                    <li>Culture</li>
-                    <li>Style</li>
-                    <li>Music</li>
-                    <li>Movie</li>
-                    <li>TV</li>
-                    <li>Tech</li>
-                    <li>Science</li>
-                    <li>Sports</li>
-                </ul>
+
             </div> <!-- /side-nav -->
             <div id="article-panel">
                 <div class="across-ad">
@@ -78,24 +69,9 @@
                         undoubtedly make every moment worthwhile.</p>
                 </div>
             </div> <!-- /article-panel -->
-            <div id="ads-panel">
-                <h2>sponsored</h2>
-                <div class="ad">
-                    <img />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="ad">
-                    <img />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="ad">
-                    <img />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div> <!-- /ads-panel -->
+            <div id="right-panel">
+
+            </div> <!-- /right-panel -->
         </div> <!-- /content -->
 
     </div>

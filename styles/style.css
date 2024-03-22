@@ -1,3 +1,6 @@
+@import "article.css";
+@import "rightpanel.css";
+
 #page {
     display: flex;
     width: 960px;
@@ -5,7 +8,7 @@
     margin: 0 auto;
     padding: 0 10px;
     font-family: Trebuchet MS, sans-serif;
-    background-image: linear-gradient(white 15%, rgba(246, 229, 166, .8));
+    background-image: linear-gradient(white 15%, rgba(171, 204, 194, .8));
 }
 
 p,
@@ -128,7 +131,7 @@ li {
 }
 
 #side-nav li {
-    color: #6A9590;
+    color: #1d0B6a;
     padding: .1em;
 }
 
@@ -193,7 +196,7 @@ li {
 
 .tags li:not(.label):hover {
     padding: .2em;
-    background: #6A9590;
+    background: #1d0B6a;
     margin-left: .2em;
     margin-right: .2em;
 }
@@ -243,7 +246,7 @@ li {
     flex: 1;
     justify-content: center;
     text-align: center;
-    background-color: #6A9590;
+    background-color: #1d0B6a;
     height: 150px;
     width: 400px;
     /* max-width: 98%; */
@@ -312,7 +315,7 @@ label:hover {
 
 /*********** MIDDLE PANEL END *************/
 
-#ads-panel {
+#right-panel {
     display: flex;
     flex-flow: column;
     width: 240px;
@@ -321,17 +324,17 @@ label:hover {
     padding-left: .5em;
 }
 
-#ads-panel h2 {
+#right-panel h2 {
     font-variant: small-caps;
 }
 
-.ad img {
+.topcat img {
     /* max-width: 98%; */
     height: 180px;
     width: 220px;
 }
 
-.ad p {
+.topcat p {
     font-size: 12px;
 }
 
