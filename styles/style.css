@@ -196,7 +196,7 @@ li {
 
 .tags li:not(.label):hover {
     padding: .2em;
-    background: #1d0B6a;
+    background: #de542a;
     margin-left: .2em;
     margin-right: .2em;
 }
