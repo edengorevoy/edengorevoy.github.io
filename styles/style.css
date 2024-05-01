@@ -148,6 +148,16 @@ li {
 
 /*********** SIDE NAV END *************/
 
+.quiz {
+    display: flex;
+    flex-flow: column;
+    width: 600px;
+    padding-left: .5em;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: .5em; */
+}
+
 #quiz-panel {
     display: flex;
     flex-flow: column;
@@ -234,6 +244,14 @@ li {
 /*********** QUESTIONS ***********/
 
 .question {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: .5em;
+}
+
+form {
     display: flex;
     flex-flow: column;
     max-width: 80%;

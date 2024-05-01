@@ -17,7 +17,52 @@
         $("#side-nav").load("sidenav.html");
         $("#right-panel").load("rightpanel.html");
         $("#leaderboard-ad-1").load("acrossad.html");
+        $("#leaderboard-ad-2").load("acrossad.html");
+
+        var submit = document.querySelector('[name="getResults"]');
+        console.log(submit)
+
+        submit.addEventListener('click', scoreQuiz);
+        // scoreQuiz();
     });
+
+    /* Scores the quiz. Does NOT do tiebreaker */
+    function scoreQuiz() {
+        results_dict = {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "t5": 0,
+            "t6": 0
+        }
+        $("input[name^='q']:checked").each( function () {
+            if(this.checked == true) {
+                var types = this.value.split(",");
+                types.forEach(function (item) {
+                    results_dict[item] += 1; 
+                })
+                console.log(this.value);
+            }
+        });
+
+        // put key/val pairs in array
+        var keyValues = [];
+
+        for (var key in results_dict) {
+            keyValues.push([key, results_dict[key]])
+        }
+
+        keyValues.sort(function compare(kv1, kv2) {
+            return kv2[1]-kv1[1];
+        })
+        console.log(keyValues);
+        // const radioChoices = 
+    }
+    function test() {
+        console.log("yah");
+        // const radioChoices = 
+    }
 </script>
 
 <body>
@@ -34,7 +79,7 @@
                     <div class="quiz-label">
                         <p>QUIZ</p>
                     </div>
-                    <p class="date">Posted on [], 2008</p>
+                    <p class="date">Posted on April 8, 2008</p>
                     <h1 class="title">Take This Quiz to Find Out What Cat You Are</h1>
                     <h3 class="subtitle">We'll see how you're really feline.</h2>
                         <div class="author-panel">
@@ -51,96 +96,291 @@
                             </ul>
                         </div>
                 </div>
+                <form>
+                    <div id="question-1" class="question">
+                        <h2 class="question-title">
+                            Do you like to hang around people, or do you like being alone?
+                        </h2>
+                        <div class="answers">
+                            <div class="answer-box">
+                                <label for="q1a1">
+                                    <img src="./images/q1_2.jpg">
+                                    <p>Leave me alone please.</p>
+                                </label>
+                                <input type="radio" value="t2,t5" id="q1a1" name="q1">
 
-                <div id="question-1" class="question">
-                    <h2 class="question-title">
-                        Do you like to hang around people, or do you like being alone?
-                    </h2>
-                    <div class="answers">
-                        <div class="answer-box">
-                            <label for="q1a1">
-                                <img src="./images/q1_2.jpg">
-                                <p>Leave me alone please!</p>
-                            </label>
-                            <input type="radio" name="q1" id="q1a1">
+                            </div>
+                            <div class="answer-box">
+                                <label for="q1a2">
+                                    <img src="./images/q1_1.jpg">
+                                    <p>I love hanging out!</p>
 
-                        </div>
-                        <div class="answer-box">
-                            <label for="q1a2">
-                                <img src="./images/q1_1.jpg">
-                                <p>I like hanging out!</p>
+                                </label>
+                                <input type="radio" value="t1,t6" id="q1a2" name="q1">
+                            </div>
+                            <!-- <div class="answer-box">
+                                <label for="q1a3">
+                                    <img src="./images/q1_3.jpg">
+                                    <p>Depends on my mood</p>
 
-                            </label>
-                            <input type="radio" name="q1" id="q1a2">
-                        </div>
-                    </div>
-                </div>
-                <div class="across-ad">
-                    <p>SPONSORED</p>
-                    <img />
-                </div>
-                <div id="question-2" class="question">
-                    <h2 class="question-title">
-                        Where's the best place to nap?
-                    </h2>
-                    <div class="answers">
-                        <div class="answer-box">
-                            <label for="q2a1">
-                                <img src="./images/q1_2.jpg">
-                                <p>In a sunbeam</p>
-                            </label>
-                            <input type="radio" name="q2" id="q2a1">
+                                </label>
+                                <input type="radio" value="t2,t3" id="q1a3" name="q1">
+                            </div>
+                            <div class="answer-box">
+                                <label for="q1a4">
+                                    <img src="./images/q1_4.jpg">
+                                    <p>Just one or two close friends for me</p>
 
-                        </div>
-                        <div class="answer-box">
-                            <label for="q2a2">
-                                <img src="./images/q1_1.jpg">
-                                <p>Under a big palm tree</p>
-
-                            </label>
-                            <input type="radio" name="q2" id="q2a2">
-                        </div>
-                        <div class="answer-box">
-                            <label for="q2a3">
-                                <img src="./images/q1_1.jpg">
-                                <p>Tucked all up in a blanket</p>
-
-                            </label>
-                            <input type="radio" name="q2" id="q2a3">
-                        </div>
-                        <div class="answer-box">
-                            <label for="q2a4">
-                                <img src="./images/q1_1.jpg">
-                                <p>a secret fourth thing</p>
-
-                            </label>
-                            <input type="radio" name="q2" id="q2a4">
+                                </label>
+                                <input type="radio" value="t2,t3,t4,t5" id="q1a4" name="q1">
+                            </div> -->
                         </div>
                     </div>
-                </div>
-                <div id="question-3" class="question">
-                    <h2 class="question-title">
-                        Where's the best place to nap?
-                    </h2>
-                    <div class="answers">
-                        <div class="answer-box">
-                            <label for="q3a1">
-                                <img src="./images/q1_2.jpg">
-                                <p>Leave me alone please!</p>
-                            </label>
-                            <input type="radio" name="q3" id="q3a1">
+                    <div class="across-ad" id="leaderboard-ad-2">
+                    </div>
+                    <div id="question-2" class="question">
+                        <h2 class="question-title">
+                            Where's the best place to nap?
+                        </h2>
+                        <div class="answers">
+                            <div class="answer-box">
+                                <label for="q2a1">
+                                    <img src="./images/q2_1.jpg">
+                                    <p>I don't nap.</p>
+                                </label>
+                                <input type="radio" value="t5" id="q2a1" name="q2">
 
-                        </div>
-                        <div class="answer-box">
-                            <label for="q3a2">
-                                <img src="./images/q1_1.jpg">
-                                <p>I like hanging out!</p>
+                            </div>
+                            <div class="answer-box">
+                                <label for="q2a2">
+                                    <img src="./images/q2_2.jpg">
+                                    <p>Cozied up under the covers</p>
 
-                            </label>
-                            <input type="radio" name="q3" id="q3a2">
+                                </label>
+                                <input type="radio" value="t2,t3" id="q2a2" name="q2">
+                            </div>
+                            <div class="answer-box">
+                                <label for="q2a3">
+                                    <img src="./images/q2_3.jpg">
+                                    <p>In a sunbeam on the grass</p>
+
+                                </label>
+                                <input type="radio" value="t1,t2,t4" id="q2a3" name="q2">
+                            </div>
+                            <div class="answer-box">
+                                <label for="q2a4">
+                                    <img src="./images/q2_4.jpg">
+                                    <p>Wherever I end up falling asleep</p>
+
+                                </label>
+                                <input type="radio" value="t1,t3,t6" id="q2a4" name="q2">
+                            </div>
                         </div>
                     </div>
-                </div>
+                        <div class="across-ad" id="leaderboard-ad-1">
+                        </div>
+                    <div id="question-3" class="question">
+                        <h2 class="question-title">
+                            What's your skincare routine?
+                        </h2>
+                        <div class="answers">
+                            <div class="answer-box">
+                                <label for="q3a1">
+                                    <img src="./images/q3_1.jpg">
+                                    <p>Just cleanser and water</p>
+                                </label>
+                                <input type="radio" value="t1,t3" id="q3a1" name="q3">
+
+                            </div>
+                            <div class="answer-box">
+                                <label for="q3a2">
+                                    <img src="./images/q3_2.jpg">
+                                    <p>It's multiple steps and I can't miss a day!</p>
+
+                                </label>
+                                <input type="radio" value="t2,t5" id="q3a2" name="q3">
+                            </div>
+                            <div class="answer-box">
+                                <label for="q3a3">
+                                    <img src="./images/q3_3.jpg">
+                                    <p>Routine???</p>
+
+                                </label>
+                                <input type="radio" value="t3,t6" id="q3a3" name="q3">
+                            </div>
+                            <div class="answer-box">
+                                <label for="q3a4">
+                                    <img src="./images/q3_4.jpg">
+                                    <p>Sunscreen and bug spray</p>
+
+                                </label>
+                                <input type="radio" value="t4," id="q3a4" name="q3">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="question-4" class="question">
+                        <h2 class="question-title">
+                            How do you feel about Mondays?
+                        </h2>
+                        <div class="answers">
+                            <div class="answer-box">
+                                <label for="q4a1">
+                                    <img src="./images/q4_1.jpg">
+                                    <p>Can't wait for Monday!</p>
+                                </label>
+                                <input type="radio" value="t3,t4" id="q4a1" name="q4">
+
+                            </div>
+                            <div class="answer-box">
+                                <label for="q4a2">
+                                    <img src="./images/q4_2.jpg">
+                                    <p>I HATE Mondays.</p>
+
+                                </label>
+                                <input type="radio" value="t2,t6" id="q4a2" name="q4">
+                            </div>
+                            <div class="answer-box">
+                                <label for="q4a3">
+                                    <img src="./images/q4_3.jpg">
+                                    <p>Just another day in this endless void</p>
+
+                                </label>
+                                <input type="radio" value="t5" id="q4a3" name="q4">
+                            </div>
+                            <div class="answer-box">
+                                <label for="q4a4">
+                                    <img src="./images/q4_4.jpg">
+                                    <p>I don't mind them!</p>
+
+                                </label>
+                                <input type="radio" value="t1,t3,t4" id="q4a4" name="q4">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="question-5" class="question">
+                        <h2 class="question-title">
+                            What about Italian food?
+                        </h2>
+                        <div class="answers">
+                            <div class="answer-box">
+                                <label for="q5a1">
+                                    <img src="./images/q5_1.jpg">
+                                    <p>Bury me in a bed of lasagna</p>
+                                </label>
+                                <input type="radio" value="t3,t6" id="q5a1" name="q5">
+
+                            </div>
+                            <div class="answer-box">
+                                <label for="q5a2">
+                                    <img src="./images/q5_2.jpg">
+                                    <p>I'm not a big carbs person</p>
+
+                                </label>
+                                <input type="radio" value="t2,t4" id="q5a2" name="q5">
+                            </div>
+                            <div class="answer-box">
+                                <label for="q5a3">
+                                    <img src="./images/q5_3.jpg">
+                                    <p>I'll take some italian wine instead</p>
+
+                                </label>
+                                <input type="radio" value="t2,t5" id="q5a3" name="q5">
+                            </div>
+                            <div class="answer-box">
+                                <label for="q5a4">
+                                    <img src="./images/q5_4.jpg">
+                                    <p>Sure, I'll eat it!</p>
+                                </label>
+                                <input type="radio" value="t1,t3,t4" id="q5a4" name="q5">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="question-6" class="question">
+                        <h2 class="question-title">
+                            What's something your friends might tease you about?
+                        </h2>
+                        <div class="answers">
+                            <div class="answer-box">
+                                <label for="q6a1">
+                                    <img src="./images/q6_1.jpg">
+                                    <p>Nothing. I am perfect.</p>
+                                </label>
+                                <input type="radio" value="t2" id="q6a1" name="q6">
+
+                            </div>
+                            <div class="answer-box">
+                                <label for="q6a2">
+                                    <img src="./images/q6_2.jpg">
+                                    <p>I'm pretty clumsy and scatterbrained</p>
+
+                                </label>
+                                <input type="radio" value="t6" id="q6a2" name="q6">
+                            </div>
+                            <div class="answer-box">
+                                <label for="q6a3">
+                                    <img src="./images/q6_3.jpg">
+                                    <p>They might call me... strange...</p>
+
+                                </label>
+                                <input type="radio" value="t5" id="q6a3" name="q6">
+                            </div>
+                            <div class="answer-box">
+                                <label for="q6a4">
+                                    <img src="./images/q6_4.jpg">
+                                    <p>They'd say I don't go out enough</p>
+                                </label>
+                                <input type="radio" value="t3,t4" id="q6a4" name="q6">
+                            </div>
+                            <div class="answer-box">
+                                <label for="q6a5">
+                                    <img src="./images/q6_5.jpg">
+                                    <p>We don't tease each other like that!</p>
+                                </label>
+                                <input type="radio" value="t1,t3,t4" id="q6a5" name="q6">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="question-7" class="question">
+                        <h2 class="question-title">
+                            Last and potentially least... thoughts on dogs?
+                        </h2>
+                        <div class="answers">
+                            <div class="answer-box">
+                                <label for="q7a1">
+                                    <img src="./images/q7_1.jpg">
+                                    <p>Second only to cats!</p>
+                                </label>
+                                <input type="radio" value="t1,t3,t4" id="q7a1" name="q7">
+
+                            </div>
+                            <div class="answer-box">
+                                <label for="q7a2">
+                                    <img src="./images/q7_2.jpg">
+                                    <p>I LOVE DOGS!!!</p>
+
+                                </label>
+                                <input type="radio" value="t4,t6" id="q7a2" name="q7">
+                            </div>
+                            <div class="answer-box">
+                                <label for="q7a3">
+                                    <img src="./images/q7_3.jpg">
+                                    <p>I don't think about dogs</p>
+
+                                </label>
+                                <input type="radio" value="t2,t3" id="q7a3" name="q7">
+                            </div>
+                            <div class="answer-box">
+                                <label for="q7a4">
+                                    <img src="./images/q7_4.jpg">
+                                    <p>They are my mortal enemy.</p>
+                                </label>
+                                <input type="radio" value="t5" id="q7a4" name="q7">
+                            </div>
+                        </div>
+                    </div>
+                <button type="button" name="getResults">Results</button>
+                </form>
+                <div id="result"></div>
             </div> <!-- /quiz-panel -->
             <div id="right-panel">
             </div> <!-- /right-panel -->
